@@ -7,9 +7,8 @@ function init() {
         { name: "Player 2", points: 10, assists: 3, rebounds: 7 },
         { name: "Player 3", points: 30, assists: 7, rebounds: 12 },
     ];
-
-    const features = ['points', 'assists', 'rebounds'];
-    const perceptron = new Perceptron(features);
+    
+    const perceptron = new Perceptron(['points', 'assists', 'rebounds']);
 
     players.forEach(player => {
         const prediction = perceptron.predict({
