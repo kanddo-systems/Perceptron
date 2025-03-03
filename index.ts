@@ -17,7 +17,7 @@ function init() {
             assists: player.assists,
             rebounds: player.rebounds,
         });
-        console.log(`${player.name}: ${prediction === 1 ? "Bom jogador" : "Não é bom jogador"}`);
+        console.log(`${player.name}: ${prediction ? "Bom jogador" : "Não é bom jogador"}`);
     });
 }
 

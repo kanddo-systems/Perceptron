@@ -13,8 +13,8 @@ export class Perceptron {
         this.learnRate = learnRate;
     }
 
-    predict(inputs: { [key: string]: number }): number {
-        return weightedSum(inputs, this.weights) >= 0 ? 1 : 0;
+    predict(inputs: { [key: string]: number }): boolean {
+        return !!weightedSum(inputs, this.weights);
     }
 }
 
