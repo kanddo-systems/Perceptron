@@ -7,16 +7,24 @@ function init() {
         { name: "Player 2", points: 10, assists: 3, rebounds: 7 },
         { name: "Player 3", points: 30, assists: 7, rebounds: 12 },
     ];
-    
+
+    const expectedOutputs: { [key: string]: number } = {
+        "Player 1": 1,
+        "Player 2": 0,
+        "Player 3": 1
+    };
+
     const perceptron = new Perceptron(['points', 'assists', 'rebounds']);
 
     players.forEach(player => {
-        const prediction = perceptron.predict({
+        const inputs = {
             points: player.points,
             assists: player.assists,
             rebounds: player.rebounds,
-        });
-        console.log(`${player.name}: ${prediction ? "Bom jogador" : "Não é bom jogador"}`);
+        };
+        
+        const expectedOutput = expectedOutputs[player.name];
+        perceptron.train(inputs, expectedOutput);
     });
 }
 

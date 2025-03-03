@@ -1,4 +1,4 @@
-type InputsOrWeights = { [key: string]: number };
+export type InputsOrWeights = { [key: string]: number };
 export function weightedSum(inputs: InputsOrWeights, weights: InputsOrWeights): number {
     let sum = 0;
 
