@@ -50,5 +50,22 @@ export const playerMock: PlayerStats[] = [
     { name: "Josh Giddey", points: 9, assists: 5, rebounds: 6 },
     { name: "Cade Cunningham", points: 9, assists: 6, rebounds: 5 },
     { name: "Scoot Henderson", points: 8, assists: 4, rebounds: 3 },
-    { name: "Jalen Green", points: 7, assists: 2, rebounds: 3 }
+    { name: "Jalen Green", points: 7, assists: 2, rebounds: 3 },
+    { name: "Patrick Baldwin Jr.", points: 5, assists: 1, rebounds: 2 },
+    { name: "Theo Maledon", points: 4, assists: 2, rebounds: 3 },
+    { name: "Trey Murphy III", points: 4, assists: 1, rebounds: 1 },
+    { name: "Austin Reaves", points: 4, assists: 2, rebounds: 2 },
+    { name: "Jevon Carter", points: 3, assists: 1, rebounds: 1 },
+    { name: "Killian Hayes", points: 3, assists: 2, rebounds: 1 },
+    { name: "Ousmane Dieng", points: 3, assists: 1, rebounds: 2 },
+    { name: "Frank Ntilikina", points: 2, assists: 2, rebounds: 1 },
+    { name: "Udoka Azubuike", points: 2, assists: 0, rebounds: 2 },
+    { name: "Ty Jerome", points: 2, assists: 1, rebounds: 1 },
+    { name: "Dylan Windler", points: 2, assists: 0, rebounds: 1 },
+    { name: "James Bouknight", points: 1, assists: 0, rebounds: 1 },
+    { name: "Romeo Langford", points: 1, assists: 0, rebounds: 0 },
+    { name: "Goga Bitadze", points: 1, assists: 0, rebounds: 2 },
+    { name: "Darius Bazley", points: 1, assists: 0, rebounds: 1 },
+    { name: "Isaiah Todd", points: 0, assists: 0, rebounds: 1 },
+    { name: "Sekou Doumbouya", points: 0, assists: 0, rebounds: 0 }
 ];

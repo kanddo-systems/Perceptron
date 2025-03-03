@@ -10,7 +10,7 @@ export class Perceptron {
     private learnRate: number;
     private readonly weightsFile = "weights.json";
 
-    constructor(features: string[], learnRate: number = 0.00001) {
+    constructor(features: string[], learnRate: number = 0.001) {
         this.weights = loadWeights(this.weightsFile) || {};
 
         if (Object.keys(this.weights).length > 0) {

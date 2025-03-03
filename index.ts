@@ -6,14 +6,15 @@ import type { InputsOrWeights } from "./src/utils/weightedSum";
 function init() {
     const players = playerMock;
 
+    const perceptron = new Perceptron(['points', 'assists', 'rebounds']);
+
     const expectedOutputs: InputsOrWeights = players.reduce((acc: InputsOrWeights, player) => {
         acc[player.name] = classifyPlayer(player);
         return acc;
     }, {});
 
-    const perceptron = new Perceptron(['points', 'assists', 'rebounds']);
 
-    const epochs = 1000;
+    const epochs = 100000;
 
     for (let epoch = 0; epoch < epochs; epoch++) {
         players.forEach(player => {
@@ -28,15 +29,7 @@ function init() {
         });
     }
 
-    players.forEach(player => {
-        const inputs = {
-            points: player.points,
-            assists: player.assists,
-            rebounds: player.rebounds,
-        };
 
-        perceptron.predict(inputs);
-    });
 }
 
 init();
