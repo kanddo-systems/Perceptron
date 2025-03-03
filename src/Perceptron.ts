@@ -2,6 +2,7 @@ import { calculateWeightUpdate } from "./utils/calculateWeightUpdate";
 import { loadWeights } from "./utils/loadWeights";
 import { randomWeight } from "./utils/randomWeight";
 import { saveWeights } from "./utils/saveWeights";
+import { sigmoid } from "./utils/sigmoid";
 import { weightedSum, type InputsOrWeights } from "./utils/weightedSum";
 
 export class Perceptron {
@@ -9,7 +10,7 @@ export class Perceptron {
     learnRate: number;
     weightsFile = 'weights.json';
 
-    constructor(features: string[], learnRate: number = 0.01) {
+    constructor(features: string[], learnRate: number = 0.00001) {
         const savedWeights = loadWeights(this.weightsFile);
 
         if (savedWeights) {
@@ -26,14 +27,17 @@ export class Perceptron {
         this.learnRate = learnRate;
     }
 
-    predict(inputs: InputsOrWeights): boolean {
-        return !!weightedSum(inputs, this.weights);
+    predict(inputs: InputsOrWeights): number {
+        const sum = weightedSum(inputs, this.weights);  
+        return sigmoid(sum); 
     }
 
     train(inputs: InputsOrWeights, expectedOutput: number): void {
-        const prediction: number = this.predict(inputs) ? 1 : 0;
+        const prediction = this.predict(inputs);
         const error = expectedOutput - prediction;
 
+        console.log(`Expected: ${expectedOutput}, Prediction: ${prediction}, Error: ${error}`);
+        
         for (const feature in inputs) {
             if (this.weights[feature] !== undefined) {
                 this.weights[feature] += calculateWeightUpdate(inputs[feature], error, this.learnRate)

@@ -1,7 +1,4 @@
-export function calculateWeightUpdate(
-    inputValue: number,
-    error: number,
-    learnRate: number
-): number {
-    return learnRate * error * inputValue;
+export function calculateWeightUpdate(input: number, error: number, learnRate: number): number {
+    const update = learnRate * error * input;
+    return update;
 }
