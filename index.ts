@@ -9,12 +9,16 @@ function init() {
     ];
 
     const features = ['points', 'assists', 'rebounds'];
-
     const perceptron = new Perceptron(features);
-    perceptron.logWeights();
 
     players.forEach(player => {
-        console.log(`${player.name}: Points: ${player.points}, Assists: ${player.assists}, Rebounds: ${player.rebounds}`);
+        const prediction = perceptron.predict({
+            points: player.points,
+            assists: player.assists,
+            rebounds: player.rebounds,
+        });
+        console.log(`${player.name}: ${prediction === 1 ? "Bom jogador" : "Não é bom jogador"}`);
     });
 }
+
 init();
